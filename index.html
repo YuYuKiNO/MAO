@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秀兵证生成器</title>
+    <style>
+        .main {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center
+        }
+
+        .control {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 20px;
+            flex-grow: 20px;
+        }
+
+        #name {
+            outline-style: none;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 13px 14px;
+            width: 400px;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: "Microsoft soft";
+        }
+
+        #button {
+            width: 100px;
+            border: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e1e1e;
+            box-shadow: 0px 0px 6px 1px rgb(209 209 209);
+        }
+
+        #button:hover {
+            cursor: pointer;
+        }
+
+        #button:active {
+            color: #2db9ac;
+        }
+
+        #canvas {
+            padding: 20px;
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="control">
+            <input width="200px" type="text" placeholder="秀兵，你的名字是？" name="" id="name">
+            <button id="button">成为秀兵</button>
+        </div>
+        <canvas id="canvas" style="display: none;" width="1000" height="1523"></canvas>
+    </div>
+    <script>
+        const text = document.getElementById('name')
+        const button = document.getElementById('button')
+        const canvasDom = document.getElementById('canvas');
+        const canvas = canvasDom.getContext('2d');
+        const img = new Image();
+        img.src = 'image/main.jpg';
+        img.onload = function () {
+            canvas.drawImage(img, 0, 0);
+        }
+        button.addEventListener('click', () => {
+            const value = text.value
+            if (value == '') {
+                alert('秀兵，请输入你的名字。')
+                return
+            }
+            canvasDom.style.display = 'inline';
+            const img = new Image();
+            img.src = 'image/main.jpg';
+            img.onload = function () {
+                canvas.drawImage(img, 0, 0);
+                canvas.fillStyle = '#212121';   // 文字填充颜色
+                canvas.font = 'normal bold 100px sans-serif';
+                canvas.fontWeight = "700";
+                canvas.fillText(value, 102, 895);
+                canvas.stroke();
+            }
+        })
+    </script>
+
+</body>
+
+</html>
