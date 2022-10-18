@@ -17,7 +17,7 @@
         .control {
             display: flex;
             flex-flow: row nowrap;
-            gap: 20px;
+            gap: 16px;
             flex-grow: 20px;
         }
 
@@ -26,27 +26,28 @@
             border: 1px solid #ccc;
             border-radius: 3px;
             padding: 13px 14px;
-            width: 400px;
+            width: 60vw;
+            max-width: 400px;
             font-size: 24px;
             font-weight: 700;
             font-family: "Microsoft soft";
         }
 
         #button {
-            width: 100px;
+            max-width: 100px;
+            min-width: 20vw;
             border: 0;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: #1e1e1e;
             box-shadow: 0px 0px 6px 1px rgb(209 209 209);
+            transition: 0.2s;
         }
 
         #button:hover {
-            cursor: pointer;
-        }
-
-        #button:active {
+            background: rgba(45, 185, 172, 0.1);
             color: #2db9ac;
+            cursor: pointer;
         }
 
         #canvas {
@@ -59,7 +60,7 @@
 <body>
     <div class="main">
         <div class="control">
-            <input width="200px" type="text" placeholder="秀兵，你的名字是？" name="" id="name">
+            <input type="text" placeholder="秀兵，你的名字是？" name="" id="name">
             <button id="button">成为秀兵</button>
         </div>
         <canvas id="canvas" style="display: none;" width="1000" height="1523"></canvas>
