@@ -77,6 +77,7 @@
         const main = document.getElementById('main')
         const canvasDom = document.getElementById('canvas');
         const canvas = canvasDom.getContext('2d');
+        const ijunId = 'IJUN' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
         const img = new Image();
         img.src = 'image/main.jpg';
         img.onload = function () {
@@ -99,6 +100,9 @@
                 canvas.fillText(value, 102, 895);
                 canvas.font = 'normal bold 30px sans-serif';
                 canvas.fillText(value, 550, 1432);
+                canvas.font = 'italic 90px Arial';
+                canvas.fillStyle = 'red';
+                canvas.fillText(ijunId, 100, 1110);
                 canvas.stroke();
                 let dataImg = new Image()
                 dataImg.src = canvasDom.toDataURL('image/png')
