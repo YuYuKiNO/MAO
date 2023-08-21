@@ -83,7 +83,7 @@
             canvas.drawImage(img, 0, 0);
         }
         button.addEventListener('click', () => {
-            let ijunId = 'iGOU' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
+            let ijunId = 'iGOU' + (Math.floor(Math.random() * 990) + 9).toString().padStart(3, '0');
             const value = text.value
             if (value == '') {
                 alert('IGOU，请输入你的名字。')
@@ -96,6 +96,10 @@
                 ijunId = 'iGOU003';
             }else if(value == 'DailySandy') {
                 ijunId = 'iGOU000';
+            }else if(value == '厨神罢了') {
+                ijunId = 'iGOU999';
+            }else if(value == '熳酱') {
+                ijunId = 'iGOU999';
             }
             // canvasDom.style.display = 'inline';
             const img = new Image();
