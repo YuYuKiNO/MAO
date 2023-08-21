@@ -77,7 +77,7 @@
         const main = document.getElementById('main')
         const canvasDom = document.getElementById('canvas');
         const canvas = canvasDom.getContext('2d');
-        const ijunId = 'IJUN' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
+        var ijunId = 'IJUN' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
         const img = new Image();
         img.src = 'image/main.jpg';
         img.onload = function () {
@@ -88,6 +88,14 @@
             if (value == '') {
                 alert('IJUN，请输入你的名字。')
                 return
+            }else (value == '陈博') {
+                ijunId = 'IJUN002'
+            }else (value == '管泽元') {
+                ijunId = 'IJUN001'
+            }else (value == '马海威') {
+                ijunId = 'IJUN003'
+            }else (value == 'DailySandy') {
+                ijunId = 'IJUN000'
             }
             // canvasDom.style.display = 'inline';
             const img = new Image();
