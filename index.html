@@ -83,19 +83,19 @@
             canvas.drawImage(img, 0, 0);
         }
         button.addEventListener('click', () => {
-            let ijunId = 'IGOU' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
+            let ijunId = 'iGOU' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
             const value = text.value
             if (value == '') {
                 alert('IGOU，请输入你的名字。')
                 return
             }else if(value == '马海威') {
-                ijunId = 'IGOU002';
+                ijunId = 'iGOU002';
             }else if(value == '赵俊日') {
-                ijunId = 'IGOU001';
+                ijunId = 'iGOU001';
             }else if(value == '乘风儿') {
-                ijunId = 'IGOU003';
+                ijunId = 'iGOU003';
             }else if(value == 'DailySandy') {
-                ijunId = 'IGOU000';
+                ijunId = 'iGOU000';
             }
             // canvasDom.style.display = 'inline';
             const img = new Image();
