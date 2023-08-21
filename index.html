@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>秀兵证生成器</title>
+    <title>IJUN生成器</title>
     <link rel="icon" href="./image/icon.png">
     <style>
         .main {
@@ -66,8 +66,8 @@
 <body>
     <div class="main" id="main">
         <div class="control">
-            <input type="text" placeholder="秀兵，你的名字是？" name="" id="name">
-            <button id="button">成为秀兵</button>
+            <input type="text" placeholder="IJUN，你的名字是？" name="" id="name">
+            <button id="button">成为IJUN</button>
         </div>
         <canvas id="canvas" style="display: none;" width="1000" height="1523"></canvas>
     </div>
@@ -85,7 +85,7 @@
         button.addEventListener('click', () => {
             const value = text.value
             if (value == '') {
-                alert('秀兵，请输入你的名字。')
+                alert('IJUN，请输入你的名字。')
                 return
             }
             // canvasDom.style.display = 'inline';
