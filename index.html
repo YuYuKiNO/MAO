@@ -83,20 +83,19 @@
             canvas.drawImage(img, 0, 0);
         }
         button.addEventListener('click', () => {
+            let ijunId = 'IJUN' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
             const value = text.value
             if (value == '') {
                 alert('IJUN，请输入你的名字。')
                 return
             }else (value == '陈博') {
-                const ijunId = 'IJUN002'
+                ijunId = 'IJUN002'
             }else (value == '管泽元') {
-                const ijunId = 'IJUN001'
+                ijunId = 'IJUN001'
             }else (value == '马海威') {
-                const ijunId = 'IJUN003'
+                ijunId = 'IJUN003'
             }else (value == 'DailySandy') {
-                const ijunId = 'IJUN000'
-            }else {        
-                const ijunId = 'IJUN' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
+                ijunId = 'IJUN000'
             }
             // canvasDom.style.display = 'inline';
             const img = new Image();
