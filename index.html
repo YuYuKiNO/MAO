@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IJUN生成器</title>
+    <title>IGOU生成器</title>
     <link rel="icon" href="./image/icon.png">
     <style>
         .main {
@@ -66,8 +66,8 @@
 <body>
     <div class="main" id="main">
         <div class="control">
-            <input type="text" placeholder="IJUN，你的名字是？" name="" id="name">
-            <button id="button">成为IJUN</button>
+            <input type="text" placeholder="IGOU，你的名字是？" name="" id="name">
+            <button id="button">成为IGOU</button>
         </div>
         <canvas id="canvas" style="display: none;" width="1000" height="1523"></canvas>
     </div>
@@ -83,19 +83,19 @@
             canvas.drawImage(img, 0, 0);
         }
         button.addEventListener('click', () => {
-            let ijunId = 'IJUN' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
+            let ijunId = 'IGOU' + (Math.floor(Math.random() * 990) + 10).toString().padStart(3, '0');
             const value = text.value
             if (value == '') {
-                alert('IJUN，请输入你的名字。')
+                alert('IGOU，请输入你的名字。')
                 return
-            }else if(value == '陈博') {
-                ijunId = 'IJUN002';
-            }else if(value == '管泽元') {
-                ijunId = 'IJUN001';
             }else if(value == '马海威') {
-                ijunId = 'IJUN003';
+                ijunId = 'IGOU002';
+            }else if(value == '赵俊日') {
+                ijunId = 'IGOU001';
+            }else if(value == '乘风儿') {
+                ijunId = 'IGOU003';
             }else if(value == 'DailySandy') {
-                ijunId = 'IJUN000';
+                ijunId = 'IGOU000';
             }
             // canvasDom.style.display = 'inline';
             const img = new Image();
@@ -106,8 +106,6 @@
                 canvas.font = 'normal bold 100px sans-serif';
                 canvas.fontWeight = "700";
                 canvas.fillText(value, 102, 895);
-                canvas.font = 'normal bold 30px sans-serif';
-                canvas.fillText(value, 550, 1432);
                 canvas.font = 'italic 90px Arial';
                 canvas.fillStyle = 'red';
                 canvas.fillText(ijunId, 100, 1110);
