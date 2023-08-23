@@ -84,6 +84,7 @@
         }
         button.addEventListener('click', () => {
             let ijunId = 'iGOU' + (Math.floor(Math.random() * 990) + 9).toString().padStart(3, '0');
+            let hjunId = '';
             const value = text.value
             if (value == '') {
                 alert('IGOU，请输入你的名字。')
@@ -92,7 +93,7 @@
                 ijunId = 'iGOU002';
             }else if(value == '赵俊日') {
                 ijunId = 'iGOU001';
-            }else if(value == '乘风儿') {
+            }else if(value == '彭彭' || value == 'PP') {
                 ijunId = 'iGOU003';
             }else if(value == 'DailySandy') {
                 ijunId = 'iGOU000';
@@ -100,8 +101,11 @@
                 ijunId = 'iGOU999';
             }else if(value == '熳酱') {
                 ijunId = 'iGOU999';
+            }else if(value == '乘风儿' || value == 'CF2') {
+                ijunId = 'IGOU414';
+                hjunId = 'HGOU001';
             }
-            // canvasDom.style.display = 'inline';
+            
             const img = new Image();
             img.src = 'image/main.jpg';
             img.onload = () => {
@@ -113,6 +117,9 @@
                 canvas.font = 'italic 90px Arial';
                 canvas.fillStyle = 'red';
                 canvas.fillText(ijunId, 100, 1150);
+                if( hjunId != '' ){
+                    canvas.fillText(hjunId, 100, 1250);
+                }
                 canvas.stroke();
                 let dataImg = new Image()
                 dataImg.src = canvasDom.toDataURL('image/png')
