@@ -66,7 +66,7 @@
 <body>
     <div class="main" id="main">
         <div class="control">
-            <input type="text" placeholder="被拘留者的名字是？" name="" id="name">
+            <input type="text" placeholder="被拘留者的名字是？(五汉字以内)" name="" id="name">
             <button id="button">拘留</button>
         </div>
         <canvas id="canvas" style="display: none;" width="1000" height="1523"></canvas>
@@ -94,8 +94,10 @@
             let strDate = year + "年" + month + "月" + day + "日";
             const value = text.value
             if (value == '') {
-                alert('IGOU，请输入你的名字。')
+                alert('请输入你的名字。')
                 return
+            }else if(value == '袁唯译'){
+                ijunId = "001";
             }
             
             const img = new Image();
