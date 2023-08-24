@@ -119,17 +119,22 @@
             const img = new Image();
             img.src = 'image/main.jpg';
             img.onload = () => {
-                canvas.drawImage(img, 0, 0);
-                canvas.fillStyle = 'red';   // 文字填充颜色
-                canvas.font = 'normal bold 60px sans-serif';
-                canvas.fontWeight = "700";
-                canvas.fillText(value, 100, 1130);
-                canvas.font = 'italic 50px Arial';
-                canvas.fillStyle = '#212121';
-                canvas.fillText(ijunId, 725, 700);
-                canvas.font = 'italic bold 70px Arial';
-                canvas.fillText(strDate,400, 1400);
-                canvas.stroke();
+                if(value == '袁唯译'||value == '毛毛'){
+                    canvas.drawImage('image/qifei.jpg', 0, 0);
+                }else{
+                    canvas.drawImage(img, 0, 0);
+                    canvas.fillStyle = 'red';   // 文字填充颜色
+                    canvas.font = 'normal bold 60px sans-serif';
+                    canvas.fontWeight = "700";
+                    canvas.fillText(value, 100, 1130);
+                    canvas.font = 'italic 50px Arial';
+                    canvas.fillStyle = '#212121';
+                    canvas.fillText(ijunId, 725, 700);
+                    canvas.font = 'italic bold 70px Arial';
+                    canvas.fillText(strDate,400, 1400);
+                    canvas.stroke();
+                }
+
                 let dataImg = new Image()
                 dataImg.src = canvasDom.toDataURL('image/png')
                 dataImg.className = 'img'
