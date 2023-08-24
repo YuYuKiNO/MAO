@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IGOU生成器</title>
+    <title>毛毛宇宙拘留证生成器</title>
     <link rel="icon" href="./image/icon.png">
     <style>
         .main {
@@ -66,8 +66,8 @@
 <body>
     <div class="main" id="main">
         <div class="control">
-            <input type="text" placeholder="IGOU，你的名字是？" name="" id="name">
-            <button id="button">成为IGOU</button>
+            <input type="text" placeholder="你的名字是？" name="" id="name">
+            <button id="button">拘留</button>
         </div>
         <canvas id="canvas" style="display: none;" width="1000" height="1523"></canvas>
     </div>
@@ -83,38 +83,34 @@
             canvas.drawImage(img, 0, 0);
         }
         button.addEventListener('click', () => {
-            let ijunId = 'iGOU' + (Math.floor(Math.random() * 990) + 9).toString().padStart(3, '0');
+            let ijunId = (Math.floor(Math.random() * 990) + 9).toString().padStart(3, '0');
+            let today = new Date();
+            
+            // 获取年、月、日
+            let year = today.getFullYear();
+            let month = today.getMonth() + 1; // 注意：月份从 0 开始，所以需要加 1
+            let day = today.getDate();
+
+            let strDate = year + "年" + month + "月" + day + "日";
             const value = text.value
             if (value == '') {
                 alert('IGOU，请输入你的名字。')
                 return
-            }else if(value == '马海威') {
-                ijunId = 'iGOU002';
-            }else if(value == '赵俊日') {
-                ijunId = 'iGOU001';
-            }else if(value == '彭彭' || value == 'PP') {
-                ijunId = 'iGOU003';
-            }else if(value == 'DailySandy') {
-                ijunId = 'iGOU000';
-            }else if(value == '厨神罢了') {
-                ijunId = 'iGOU999';
-            }else if(value == '熳酱') {
-                ijunId = 'iGOU999';
-            }else if(value == '乘风儿' || value == 'CF2') {
-                ijunId = 'IGOU414-HGOU001';
             }
             
             const img = new Image();
             img.src = 'image/main.jpg';
             img.onload = () => {
                 canvas.drawImage(img, 0, 0);
-                canvas.fillStyle = '#212121';   // 文字填充颜色
-                canvas.font = 'normal bold 100px sans-serif';
+                canvas.fillStyle = 'red';   // 文字填充颜色
+                canvas.font = 'normal bold 60px sans-serif';
                 canvas.fontWeight = "700";
-                canvas.fillText(value, 102, 895);
-                canvas.font = 'italic 90px Arial';
-                canvas.fillStyle = 'red';
-                canvas.fillText(ijunId, 100, 1150);
+                canvas.fillText(value, 100, 1100);
+                canvas.font = 'italic 50px Arial';
+                canvas.fillStyle = '#212121';
+                canvas.fillText(ijunId, 800, 700);
+                canvas.font = 'italic 70px Arial';
+                canvas.fillText(strDate,600, 1300);
                 canvas.stroke();
                 let dataImg = new Image()
                 dataImg.src = canvasDom.toDataURL('image/png')
