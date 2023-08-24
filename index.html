@@ -105,12 +105,12 @@
                 canvas.fillStyle = 'red';   // 文字填充颜色
                 canvas.font = 'normal bold 60px sans-serif';
                 canvas.fontWeight = "700";
-                canvas.fillText(value, 100, 1100);
+                canvas.fillText(value, 100, 1150);
                 canvas.font = 'italic 50px Arial';
                 canvas.fillStyle = '#212121';
-                canvas.fillText(ijunId, 800, 700);
-                canvas.font = 'italic 70px Arial';
-                canvas.fillText(strDate,600, 1300);
+                canvas.fillText(ijunId, 700, 700);
+                canvas.font = 'italic bold 70px Arial';
+                canvas.fillText(strDate,500, 1400);
                 canvas.stroke();
                 let dataImg = new Image()
                 dataImg.src = canvasDom.toDataURL('image/png')
