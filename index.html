@@ -117,7 +117,12 @@
             }
             
             const img = new Image();
-            img.src = 'image/main.jpg';
+            if(value == '袁唯译'||value == '毛毛'){
+               img.src = 'image/qifei.jpg';
+            }else{
+                img.src = 'image/main.jpg';
+            }
+
             img.onload = () => {
                 if(value == '袁唯译'||value == '毛毛'){
                     img.src = 'image/qifei.jpg';
