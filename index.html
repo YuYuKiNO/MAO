@@ -66,7 +66,7 @@
 <body>
     <div class="main" id="main">
         <div class="control">
-            <input type="text" placeholder="你的名字是？" name="" id="name">
+            <input type="text" placeholder="被拘留者的名字是？" name="" id="name">
             <button id="button">拘留</button>
         </div>
         <canvas id="canvas" style="display: none;" width="1000" height="1523"></canvas>
@@ -88,7 +88,7 @@
             
             // 获取年、月、日
             let year = today.getFullYear();
-            let month = today.getMonth() + 1; // 注意：月份从 0 开始，所以需要加 1
+            let month = today.getMonth() + 1; 
             let day = today.getDate();
 
             let strDate = year + "年" + month + "月" + day + "日";
@@ -108,7 +108,7 @@
                 canvas.fillText(value, 100, 1130);
                 canvas.font = 'italic 50px Arial';
                 canvas.fillStyle = '#212121';
-                canvas.fillText(ijunId, 750, 700);
+                canvas.fillText(ijunId, 725, 700);
                 canvas.font = 'italic bold 70px Arial';
                 canvas.fillText(strDate,400, 1400);
                 canvas.stroke();
